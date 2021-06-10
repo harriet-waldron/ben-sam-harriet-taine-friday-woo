@@ -16,6 +16,10 @@ const category3 = document.getElementById("catC")
 const category4 = document.getElementById("catD")
 const vowelGame = document.getElementById("vowelGame")
 
+//vowel game stuff
+// vowelGame.addEventListener("submit", get_input)
+
+
 const categories = {
     A : "Geography",
     B : "Math",
@@ -95,7 +99,6 @@ const renderQuestion = (category = questions) =>{
 
 
 const startQuiz = () => {
-    currentQuestion = 0
     start.style.display = "none"
     renderQuestion()
     quiz.style.display = "block"
@@ -174,7 +177,6 @@ const renderCategories = () => {
     category4.innerHTML = categories.D
 }
 
-
 const newCategory = (category) => {
     categoryDiv.style.display = "none"
     currentQuestion = 0
@@ -186,3 +188,8 @@ const newCategory = (category) => {
     scoreDiv.style.display = "none"
 }
 
+// const get_input = (x) => {
+//     const answer = document.getElementById("vowelAnswer").value;
+//     console.log('answer', answer)
+//     x.preventDefault();
+// }

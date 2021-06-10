@@ -3,7 +3,7 @@ const express = require('express')
 const server = express()
 
 // Server configuration
-server.use(express.static('public'))
+server.use('/static', express.static(__dirname + '/static'))
 server.use(express.urlencoded({ extended: false }))
 
 // Your routes/router(s) should go heres
