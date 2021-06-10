@@ -1,14 +1,14 @@
-const { table } = require("node:console");
+
 
 exports.up = function(knex) {
-  return knex.schema.createTable('question-answer', () => {
+  return knex.schema.createTable('question-answer', (table) => {
     table.increments('id').primary()
-    table.toString('question')
-    table.toString('choiceA')
-    table.toString('choiceB')
-    table.toString('choiceC')
-    table.toString('choiceD')
-    table.toString('correct-choice')
+    table.string('question')
+    table.string('choiceA')
+    table.string('choiceB')
+    table.string('choiceC')
+    table.string('choiceD')
+    table.string('correct_choice')
     table.integer('categories_id')
   })
 };

@@ -1,9 +1,9 @@
-const { table } = require("node:console");
+
 
 exports.up = function(knex) {
-  return knex.schema.createTable('categories', () => {
+  return knex.schema.createTable('categories', (table) => {
     table.increments('id').primary()
-    table.toString('title')
+    table.string('title')
   })
 };
 
