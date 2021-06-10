@@ -14,6 +14,7 @@ const category1 = document.getElementById("catA")
 const category2 = document.getElementById("catB")
 const category3 = document.getElementById("catC")
 const category4 = document.getElementById("catD")
+const vowelGame = document.getElementById("vowelGame")
 
 const categories = {
     A : "Geography",
@@ -184,24 +185,4 @@ const newCategory = (category) => {
     TIMER = setInterval(renderCounter,1000)
     scoreDiv.style.display = "none"
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
