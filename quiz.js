@@ -47,6 +47,31 @@ const questions = [
     }
 ]
 
+const questions2 = [
+    {
+        question : "Which is22 right?",
+        choiceA : "Correct",
+        choiceB : "Wrong",
+        choiceC : "Wrong",
+        choiceD : "Wrong",
+        correct : "A"
+    },{
+        question : "Which is r22ight this time?",
+        choiceA : "Wrong",
+        choiceB : "Correct",
+        choiceC : "Wrong",
+        choiceD : "Wrong",
+        correct : "B"
+    },{
+        question : "How about no22w?",
+        choiceA : "Wrong",
+        choiceB : "Wrong",
+        choiceC : "Correct",
+        choiceD : "Wrong",
+        correct : "C"
+    }
+]
+
 
 const lastQuestion = questions.length - 1
 let currentQuestion = 0
@@ -55,8 +80,8 @@ const questionTime = 10
 let TIMER
 let score = 0
 
-const renderQuestion = () =>{
-    let q = questions[currentQuestion]
+const renderQuestion = (category = questions) =>{
+    let q = category[currentQuestion]
     
     question.innerHTML = "<p>"+ q.question +"</p>"
     choiceA.innerHTML = q.choiceA
@@ -69,6 +94,7 @@ const renderQuestion = () =>{
 
 
 const startQuiz = () => {
+    currentQuestion = 0
     start.style.display = "none"
     renderQuestion()
     quiz.style.display = "block"
@@ -102,6 +128,10 @@ const renderCounter = () => {
     }
 }
 
+const hideQuestions = () => {
+    quiz.style.display = "none"
+}
+
 const checkAnswer = (answer) => {
     if(answer == questions[currentQuestion].correct){
         score++
@@ -117,15 +147,16 @@ const checkAnswer = (answer) => {
         clearInterval(TIMER)
         renderScore()
         renderCategories()
+        hideQuestions()
     }
 }
 
 const correctChoice = () => {
-    document.getElementById(currentQuestion).style.backgroundColor = "#0f0"
+    document.getElementById(currentQuestion).style.backgroundColor = "green"
 }
 
 const incorrectChoice = () => {
-    document.getElementById(currentQuestion).style.backgroundColor = "#f00"
+    document.getElementById(currentQuestion).style.backgroundColor = "red"
 }
 
 
@@ -144,5 +175,33 @@ const renderCategories = () => {
 
 
 const newCategory = (category) => {
-    
+    categoryDiv.style.display = "none"
+    currentQuestion = 0
+    renderQuestion(category)
+    quiz.style.display = "block"
+    renderProgress()
+    renderCounter()
+    TIMER = setInterval(renderCounter,1000)
+    scoreDiv.style.display = "none"
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
