@@ -1,8 +1,13 @@
 body {
   background-color: rgba(38, 0, 255, 0.795);
   display: flex;
-  font-size: 42px;
+  font-size: 50px;
   font-weight: bold;
+  
+}
+
+h1, {
+  color: #e64100;
 }
 
 #container {
@@ -11,13 +16,14 @@ body {
 width 100%;
 margin-left: auto;
 margin-right: auto;
+/* background-color: rgba(38, 0, 255, 0.349); */
           
 }
 
 #start {
-  margin-top: 180%;
+  margin-top: 50%;
   padding: 70px;
-  background-color: aliceblue;
+  background-color: rgb(156, 204, 247);
   /* border: 10px solid rgb(247, 5, 5); */
   box-shadow: 0 0 3.5rem #fff,
               0 0 4rem #0086f3,
@@ -30,7 +36,6 @@ margin-right: auto;
 #quiz {
   padding: 30px;
   margin-top: 20%;
-  background-color: aliceblue;
   border: 1px solid rgb(0, 0, 0);
   box-shadow: 0 0 .5rem #fff,
               0 0 .5rem #f3a600,
@@ -42,8 +47,8 @@ margin-right: auto;
 
 #choices {
   margin-top: 50px;
-  background-color: aliceblue;
-  border: 1px solid black;
+ 
+  border: 1px solid rgb(19, 1, 85);
   cursor: pointer;
   /* box-shadow: 0 0 .5rem #fff,
               0 0 .5rem #f3a600,
@@ -54,7 +59,7 @@ margin-right: auto;
 }
 
 .choice {
-  background-color: aliceblue;
+  background-color: rgb(156, 204, 247);
   border: 1px solid black;
 }
 
@@ -64,13 +69,31 @@ margin-right: auto;
 }
 
 #scoreContainer {
-  background-color: aliceblue;
+  background-color: rgb(156, 204, 247);
+  box-shadow: 0 0 3.5rem #fff,
+  0 0 4rem #0086f3,
+  0 0 5rem #4900f3,
+  0 0 8rem #37037a,
+  0 0 9.8rem #6b014b,
+  inset 0 0 2.6rem #3700ffed;
 }
 .category {
-  background-color: aliceblue;
+  padding: 25px;
+  background-color: rgb(156, 204, 247);
   border: 1px solid black;
+  box-shadow: 0 0 .5rem #fff,
+  0 0 .5rem #f3a600,
+  0 0 5rem #f37500,
+  0 0 1.2rem #fe1327,
+  0 0 4.8rem #fe13b8,
+  inset 0 0 2.6rem #bc13fe;
 }
+  
+/* #categoryPicker {
+  color:#250030;
+} */
 
 button {
   background-color: rgb(1, 36, 66);
 }
+
