@@ -15,77 +15,118 @@ const category2 = document.getElementById("catB")
 const category3 = document.getElementById("catC")
 const category4 = document.getElementById("catD")
 const vowelGame = document.getElementById("vowelGame")
-const db = require('../db')
-
-//vowel game stuff
-// vowelGame.addEventListener("submit", get_input)
-db.getOneCategory(1)
 
 const categories = {
-    A : "Geography",
-    B : "Math",
+    A : "History",
+    B : "Music",
     C : "Sports",
-    D : "History"
+    D : "Geography",
+    E : "General Knowledge"
+
 }
    
-const questions = [
+const history = [
     {
-        question : "Which is right?",
-        choiceA : "Correct",
-        choiceB : "Wrong",
-        choiceC : "Wrong",
-        choiceD : "Wrong",
-        correct : "A"
+        question: 'What was the 1st human invention to break the sound barrier?',
+        choiceA: 'plane',
+        choiceB: 'rocket',
+        choiceC: 'whip',
+        choiceD: 'bullet',
+        correct: 'C',
     },{
-        question : "Which is right this time?",
-        choiceA : "Wrong",
-        choiceB : "Correct",
-        choiceC : "Wrong",
-        choiceD : "Wrong",
-        correct : "B"
-    },{
-        question : "How about now?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        choiceD : "Wrong",
-        correct : "C"
-    }
+        question: 'Who assassinated John Lennon?',
+        choiceA: 'Mark Chapman',
+        choiceB: 'Yoko Ono',
+        choiceC: 'John Darwin',
+        choiceD: 'Dave Grohl',
+        correct: 'A',
+      },
 ]
 
-const questions2 = [
+const music = [
     {
-        question : "Which is22 right?",
-        choiceA : "Correct",
-        choiceB : "Wrong",
-        choiceC : "Wrong",
-        choiceD : "Wrong",
-        correct : "A"
-    },{
-        question : "Which is r22ight this time?",
-        choiceA : "Wrong",
-        choiceB : "Correct",
-        choiceC : "Wrong",
-        choiceD : "Wrong",
-        correct : "B"
-    },{
-        question : "How about no22w?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        choiceD : "Wrong",
-        correct : "C"
-    }
+        question: 'How many groves are on one side of an LP record?',
+        choiceA: '3',
+        choiceB: '5',
+        choiceC: '2',
+        choiceD: '1',
+        correct: 'D'
+      },
+      {
+        question: 'How many black keys on a standard piano?',
+        choiceA: '36',
+        choiceB: '40',
+        choiceC: '28',
+        choiceD: '32',
+        correct: 'A'
+      }
+]
+const sport = [
+    {
+        question: 'In what year and in whatcountry was the first FIFI world cup held?',
+        choiceA: '1930, Uruguay',
+        choiceB: '1924, Germany',
+        choiceC: '1920, England',
+        choiceD: '1950, Austria',
+        correct: 'A'
+      },
+      {
+        question: 'What is the maximum number of horses allowed to run the grand national?',
+        choiceA: '50',
+        choiceB: '44',
+        choiceC: '30',
+        choiceD: '40',
+        correct: 'D'
+      },
+]
+const geography = [
+    {
+
+        question: 'How many emirates make up the United Arab Emerates?',
+        choiceA: '3',
+        choiceB: '5',
+        choiceC: '7',
+        choiceD: '8',
+        correct: 'C'
+      },
+      {
+
+        question: 'How many american states have the letter x in them?',
+        choiceA: '3',
+        choiceB: '1',
+        choiceC: '4',
+        choiceD: '2',
+        correct: 'D'
+      }
 ]
 
-const lastQuestion = questions.length - 1
+const general = [
+    {
+        question: 'In the board game Risk what colour is Europe?',
+        choiceA: 'Green',
+        choiceB: 'Red',
+        choiceC: 'Yellow',
+        choiceD: 'Blue',
+        correct: 'D'
+      },
+      {
+        question: 'Chronophobia is a fear of what?',
+        choiceA: 'metal',
+        choiceB: 'time',
+        choiceC: 'kronos',
+        choiceD: 'dates',
+        correct: 'B'
+      }
+]
+
+const lastQuestion = geography.length - 1
 let currentQuestion = 0
 let count = 0
 const questionTime = 10 
 let TIMER
 let score = 0
 
-const renderQuestion = (category = questions) =>{
+const renderQuestion = (category = history) =>{
     let q = category[currentQuestion]
     
     question.innerHTML = "<p>"+ q.question +"</p>"
@@ -99,8 +140,9 @@ const renderQuestion = (category = questions) =>{
 
 
 const startQuiz = () => {
+
+    renderQuestion()  
     start.style.display = "none"
-    renderQuestion()
     quiz.style.display = "block"
     renderProgress()
     renderCounter()
@@ -136,8 +178,8 @@ const hideQuestions = () => {
     quiz.style.display = "none"
 }
 
-const checkAnswer = (answer) => {
-    if(answer == questions[currentQuestion].correct){
+const checkAnswer = (answer, category) => {
+    if(answer == category[currentQuestion].correct){
         score++
         correctChoice()
     }else{
@@ -202,3 +244,5 @@ const get_input = (x) => {
 function shortcut(string){
     return string.replace(/[aeiou]+/gi, "");
   }
+
+  
