@@ -18,8 +18,12 @@ function getOneCategory(id, db = connection) {
 // function getQuestion
 
 
+function getOneQuestion(category_id, db = connection) {
+  return db('question-answer').where("categories_id", category_id).first()
+}
 
 module.exports = {
   getCategory,
-  getOneCategory
+  getOneCategory,
+  getOneQuestion
 }

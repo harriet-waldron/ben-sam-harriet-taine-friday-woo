@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <select name="category" id="category">
+        <option value="1">History</option>
+        <option value="2">Music</option>
+        <option value="3">Geography</option>
+        <option value="4">Sport</option>
+        <option value="4">General Knowledge</option>
+    </select>
+    <div id="question-answer">
+        <p id="question" class="question"></p>
+        <p id="answer" class="answer"></p>
+    </div>
+    <script>
+        let select = document.querySelector("select");
+        select.addEventListener("change", getQuestion);
+        function getQuestion() {
+            let i = select.selectedIndex;
+            let cat_id = select.options[i].value;
+            fetch(`/get-question/${cat_id}`)
+                .then((response) => {
+                    console.log(response)
+                    console.log(response.ok);
+                    return response.json();
+                })
+                .then((parsed) => {
+                    console.log(parsed.question)
+                })
+        }      
+    </script>
+</body>
+</html>
