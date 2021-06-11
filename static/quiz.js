@@ -121,6 +121,7 @@ const general = [
 
 const lastQuestion = geography.length - 1
 let currentQuestion = 0
+let currentCategory = 0
 let count = 0
 const questionTime = 10 
 let TIMER
