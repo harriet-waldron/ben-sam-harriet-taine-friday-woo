@@ -16,10 +16,6 @@ const category3 = document.getElementById("catC")
 const category4 = document.getElementById("catD")
 const vowelGame = document.getElementById("vowelGame")
 
-//vowel game stuff
-// vowelGame.addEventListener("submit", get_input)
-
-
 const categories = {
     A : "Geography",
     B : "Math",
@@ -76,7 +72,6 @@ const questions2 = [
         correct : "C"
     }
 ]
-
 
 const lastQuestion = questions.length - 1
 let currentQuestion = 0
@@ -188,8 +183,17 @@ const newCategory = (category) => {
     scoreDiv.style.display = "none"
 }
 
-// const get_input = (x) => {
-//     const answer = document.getElementById("vowelAnswer").value;
-//     console.log('answer', answer)
-//     x.preventDefault();
-// }
+vowelGame.addEventListener("submit", get_input)
+const bonusRound = () => {
+    
+}
+
+const get_input = (x) => {
+    const answer = document.getElementById("vowelAnswer").value;
+    console.log('answer', answer)
+    x.preventDefault();
+}
+
+function shortcut(string){
+    return string.replace(/[aeiou]+/gi, "");
+  }
