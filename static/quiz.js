@@ -15,6 +15,11 @@ const category2 = document.getElementById("catB")
 const category3 = document.getElementById("catC")
 const category4 = document.getElementById("catD")
 const vowelGame = document.getElementById("vowelGame")
+const db = require('../db')
+
+//vowel game stuff
+// vowelGame.addEventListener("submit", get_input)
+db.getOneCategory(1)
 
 const categories = {
     A : "Geography",
