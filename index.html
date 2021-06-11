@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+</head>
+<body>
+    <div id="container">
+        <div id="start">Start Quiz!</div>
+        <div id="quiz" style="display: none">
+            <div id="question"></div>
+            <div id="choices">
+                <div class="choice" id="choiceA" onclick="checkAnswer('A')"></div>
+                <div class="choice" id="choiceB" onclick="checkAnswer('B')"></div>
+                <div class="choice" id="choiceC" onclick="checkAnswer('C')"></div>
+                <div class="choice" id="choiceD" onclick="checkAnswer('D')"></div>
+            </div>
+            <div id="timer">
+                <div id="counter"></div>
+                <div id="btimeGauge"></div>
+                <div id="timeGauge"></div>
+            </div>
+            <div id="progress"></div>
+        </div>
+        <div id="scoreContainer" style="display: none"></div>
+        <div id="categoryPicker" style="display: none">
+            <div>Pick a category!</div>
+            <div class="category" id="catA" onclick="newCategory(questions)"></div>
+            <div class="category" id="catB" onclick="newCategory(questions2)"></div>
+            <div class="category" id="catC" onclick="newCategory('3')"></div>
+            <div class="category" id="catD" onclick="newCategory('4')"></div>
+        </div>
+        <div id="vowelGame">
+          <div class="vowelGame" style="display: none">
+            <form id="vowelWord">
+              <div>
+                <label for="userInput">your answer!</label>
+                <input type="text" id="vowelAnswer">
+              </div>
+              <div>
+                <button class="btn">Lock it in</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+    <script src="./static/quiz.js"></script>
+</body>
+</html>
